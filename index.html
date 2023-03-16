@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container">
-            <div @mouseover="hover = true" @mouseout="hover = false" class="slider-wrapper" tabindex="0">
+            <div @mouseover="stopInterval" @mouseleave="autoPlay" class="slider-wrapper" tabindex="0">
 
                 <div class="item">
                     <img :src="images[activeImage]" :alt="titles[activeImage]" />

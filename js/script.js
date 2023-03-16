@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            clock: null,
             activeImage: 0,
             images: ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'img/05.webp'],
             titles: ['SpiderMan Miles Morales', 'Ratchet & Clank: Rift Apart', 'Fortnite', 'Stray', "Marvel's Avengers"],
@@ -38,7 +39,10 @@ createApp({
             return '';
         },
         autoPlay(){
-            setInterval(this.nextButton, 3000);
+            this.clock = setInterval(this.nextButton, 3000);
+        },
+        stopInterval() {
+            clearInterval(this.clock);
         }
     },
     mounted() {
